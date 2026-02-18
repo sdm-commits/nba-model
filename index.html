@@ -50,6 +50,11 @@ section{padding:48px 0}section+section{border-top:1px solid var(--border)}
 .pos-G{background:#f0eeff;color:#5856d6}.pos-F{background:#eefbf0;color:#248a3d}.pos-C{background:#fff4e6;color:#c45a00}
 .vorp-val{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;min-width:42px;text-align:right}
 .vorp-val.hit{color:var(--green)}.vorp-val.mid{color:var(--gray)}.vorp-val.bust{color:var(--red)}
+.consensus-rk{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-ter);min-width:36px;text-align:right}
+.prow-2026{grid-template-columns:28px 1fr auto auto}
+.mock-header-row{display:grid;grid-template-columns:28px 1fr auto auto;gap:12px}
+.mock-header{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter);text-align:right;padding-bottom:8px}
+.value-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;font-weight:600;padding:1px 6px;border-radius:4px;background:#eefbf0;color:#248a3d;margin-left:6px;letter-spacing:0.3px}
 .vorp-header-row{display:grid;grid-template-columns:28px 1fr auto auto;gap:12px}
 .vorp-header{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter);text-align:right;padding-bottom:8px;border-bottom:1px solid var(--border-light)}
 .bsummary{font-size:13px;color:var(--text-sec);margin-top:14px;padding-top:14px;border-top:1px solid var(--border-light)}
@@ -61,7 +66,7 @@ section{padding:48px 0}section+section{border-top:1px solid var(--border)}
 .tag{font-family:'DM Mono',monospace;font-size:10px;padding:3px 9px;border-radius:5px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-sec)}
 .optimizer-callout{margin-top:32px;padding:28px;border:1px solid var(--border);border-radius:16px;background:var(--bg-card)}
 .optimizer-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.optimizer-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-subtle);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.optimizer-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-subtle);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;flex-shrink:0;text-align:center;padding:0}
 .optimizer-header h3{font-size:16px;font-weight:700;letter-spacing:-0.3px;margin-bottom:1px}
 .optimizer-tagline{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-ter);letter-spacing:0.3px}
 .optimizer-body{font-size:14px;color:var(--text-sec);line-height:1.7;margin-bottom:14px}
@@ -228,9 +233,6 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 
   <div class="ensemble-insight">
     <strong>Why it works:</strong> The model drives the strategy — it finds undervalued production players like Sabonis, Siakam, Pritchard, and Herro that scouts overlook. A small scout signal (16%) adds value at the margins by pushing borderline busts out of the top 10 and pulling better athletes up. The result is a +7 VORP edge over the model alone.
-  </div>
-
-  <details style="margin-top:20px">
     <summary style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--text-sec);cursor:pointer;letter-spacing:0.5px">Methodology ↓</summary>
     <div style="margin-top:16px;font-size:13px;color:var(--text-sec);line-height:1.8">
       <p style="margin-bottom:12px">Scout consensus boards were compiled from Rookie Scale, NBA Mock Draft Database, Hoops Prospects, and cross-referenced contemporary ESPN/SI/NBA.com boards for 2015–2022. International and G League players were filtered out so the comparison is college-only.</p>
@@ -281,7 +283,7 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 
   <div class="optimizer-callout">
     <div class="optimizer-header">
-      <div class="optimizer-icon">⟳</div>
+      <div class="optimizer-icon"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8c2-6 4-6 5 0s3 6 5 0 3-6 5 0 3 6 5 0"/></svg></div>
       <div>
         <h3>Autonomous Optimizer</h3>
         <p class="optimizer-tagline">150–200 iterations per model. No human in the loop.</p>
@@ -356,7 +358,40 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // [name, pos, height, exp, bpm, careerCumVORP_or_null, nSeasons_or_null]
+// 2026 format: [name, pos, height, exp, xValue, consensusAvg, note]
 const D={
+2026:{note:"Way-too-early 2026 mock — 84% model / 16% consensus blend (5 sources) · Mid-season snapshot",is2026:true,p:[
+["Kingston Flemings","G",'6\'4"',"Fr",1.959,5.6,""],
+["Darryn Peterson","G",'6\'5"',"Fr",1.476,1.0,"imputed"],
+["Cameron Boozer","F",'6\'9"',"Fr",1.466,2.8,""],
+["Patrick Ngongba II","C",'6\'11"',"So",1.273,26.2,"value"],
+["Caleb Wilson","F",'6\'10"',"Fr",1.234,4.6,""],
+["Mikel Brown Jr.","G",'6\'5"',"Fr",1.128,8.0,"imputed"],
+["Brayden Burries","G",'6\'4"',"Fr",1.105,12.2,""],
+["AJ Dybantsa","F",'6\'9"',"Fr",1.082,2.2,""],
+["Keaton Wagler","G",'6\'6"',"Fr",1.062,10.8,""],
+["Jayden Quaintance","C",'6\'10"',"So",0.860,11.6,"imputed"],
+["Nate Ament","F",'6\'10"',"Fr",0.801,7.2,""],
+["Thomas Haugh","F",'6\'9"',"Jr",0.797,12.8,"imputed"],
+["Labaron Philon","G",'6\'4"',"So",0.797,12.8,"imputed"],
+["Meleek Thomas","G",'6\'5"',"Fr",0.784,25.8,"value"],
+["Darius Acuff Jr.","G",'6\'3"',"Fr",0.731,8.4,""],
+["Yaxel Lendeborg","F",'6\'9"',"Sr",0.687,16.6,"imputed"],
+["Braylon Mullins","G",'6\'6"',"Fr",0.685,17.0,"imputed"],
+["Cameron Carr","G",'6\'5"',"So",0.672,17.6,"imputed"],
+["Hannes Steinbach","C",'6\'11"',"Fr",0.614,14.6,""],
+["Koa Peat","F",'6\'8"',"Fr",0.598,12.2,""],
+["Chris Cenac Jr.","C",'6\'10"',"Fr",0.596,17.2,""],
+["Bennett Stirtz","G",'6\'4"',"Sr",0.579,21.2,"imputed"],
+["Karim Lopez","F",'6\'8"',"Fr",0.577,21.4,"imputed"],
+["Christian Anderson","G",'6\'3"',"So",0.571,21.8,"imputed"],
+["Tounde Yessoufou","F",'6\'5"',"Fr",0.543,21.4,""],
+["Isaiah Evans","G",'6\'6"',"So",0.542,22.6,"imputed"],
+["Dash Daniels","F",'6\'5"',"Fr",0.532,23.5,"imputed"],
+["Neoklis Avdalas","G",'6\'9"',"Fr",0.523,24.8,"imputed"],
+["Henri Veesaar","C",'7\'0"',"Jr",0.494,27.0,"imputed"],
+["Dame Sarr","F",'6\'8"',"Fr",0.488,28.0,"imputed"]]},
+
 2025:{note:"Pre-draft — season in progress",p:[
 ["Cooper Flagg","F",'6\'9"',"Fr",15.0,null,null],
 ["V.J. Edgecombe","G",'6\'5"',"Fr",10.0,null,null],
@@ -367,9 +402,7 @@ const D={
 ["Tre Johnson","G",'6\'6"',"Fr",6.6,null,null],
 ["Jase Richardson","G",'6\'3"',"Fr",10.0,null,null],
 ["Collin Murray-Boyles","F",'6\'8"',"So",11.1,null,null],
-["Khaman Maluach","C",'7\'2"',"Fr",8.7,null,null],
-["Kasparas Jakucionis","G",'6\'6"',"Fr",5.4,null,null],
-["Danny Wolf","F",'6\'11"',"Jr",8.3,null,null]]},
+["Khaman Maluach","C",'7\'2"',"Fr",8.7,null,null]]},
 
 2024:{note:"Rookie seasons — too early to evaluate",p:[
 ["Reed Sheppard","G",'6\'3"',"Fr",10.9,null,null],
@@ -500,7 +533,7 @@ const years=Object.keys(D).map(Number).sort((a,b)=>b-a);
 
 years.forEach(y=>{
   const t=document.createElement("div");
-  t.className="ytab"+(y===2025?" on":"");
+  t.className="ytab"+(y===2026?" on":"");
   t.textContent=y;t.dataset.y=y;
   t.onclick=()=>{
     document.querySelectorAll(".ytab").forEach(x=>x.classList.toggle("on",+x.dataset.y===y));
@@ -509,35 +542,53 @@ years.forEach(y=>{
   nav.appendChild(t);
 
   const d=D[y],b=document.createElement("div");
-  b.className="board"+(y===2025?" on":"");b.id="b"+y;
+  b.className="board"+(y===2026?" on":"");b.id="b"+y;
   let h="";
   if(d.note)h+=`<div class="board-note">${d.note}</div>`;
-  const hasActuals=d.p.some(p=>p[5]!==null);
-  if(hasActuals)h+=`<div class="vorp-header-row"><div></div><div></div><div></div><div class="vorp-header">Career VORP</div></div>`;
-  h+='<ul class="plist">';
-  d.p.forEach((p,i)=>{
-    const rk=i+1;
-    h+=`<li class="prow">
-      <div class="prk${rk<=3?" top":""}">${rk}</div>
-      <div><div class="pname">${p[0]}</div><div class="pdet">${p[2]} · ${p[3]} · ${p[4]} BPM</div></div>
-      <span class="pos pos-${p[1]}">${posLabel[p[1]]}</span>`;
-    if(p[5]!==null){
-      const v=p[5];
-      h+=`<div class="vorp-val ${vorpClass(v)}">${v>=0?'+':''}${v.toFixed(1)}</div>`;
-    } else if(hasActuals){
-      h+=`<div class="vorp-val" style="color:var(--text-ter)">—</div>`;
+  
+  if(d.is2026){
+    h+=`<div class="mock-header-row"><div></div><div></div><div class="mock-header">Pos</div><div class="mock-header">Cons.</div></div>`;
+    h+='<ul class="plist">';
+    d.p.slice(0,10).forEach((p,i)=>{
+      const rk=i+1;
+      const badge=p[6]==='value'?'<span class="value-badge">VALUE</span>':'';
+      h+=`<li class="prow prow-2026">
+        <div class="prk${rk<=3?" top":""}">${rk}</div>
+        <div><div class="pname">${p[0]}${badge}</div><div class="pdet">${p[2]} · ${p[3]} · Consensus avg #${Math.round(p[5])}</div></div>
+        <span class="pos pos-${p[1]}">${posLabel[p[1]]}</span>
+        <div class="consensus-rk">#${Math.round(p[5])}</div>
+      </li>`;
+    });
+    h+="</ul>";
+    h+=`<div class="bsummary">Blend: <strong>84% model</strong> + <strong>16% consensus</strong> (CBS, Tankathon, NBA Draft Room, The Game Haus, Bleacher Report) · Players without model data are imputed from consensus rank</div>`;
+  } else {
+    const hasActuals=d.p.some(p=>p[5]!==null);
+    if(hasActuals)h+=`<div class="vorp-header-row"><div></div><div></div><div></div><div class="vorp-header">Career VORP</div></div>`;
+    h+='<ul class="plist">';
+    d.p.forEach((p,i)=>{
+      const rk=i+1;
+      h+=`<li class="prow">
+        <div class="prk${rk<=3?" top":""}">${rk}</div>
+        <div><div class="pname">${p[0]}</div><div class="pdet">${p[2]} · ${p[3]} · ${p[4]} BPM</div></div>
+        <span class="pos pos-${p[1]}">${posLabel[p[1]]}</span>`;
+      if(p[5]!==null){
+        const v=p[5];
+        h+=`<div class="vorp-val ${vorpClass(v)}">${v>=0?'+':''}${v.toFixed(1)}</div>`;
+      } else if(hasActuals){
+        h+=`<div class="vorp-val" style="color:var(--text-ter)">—</div>`;
+      }
+      h+=`</li>`;
+    });
+    h+="</ul>";
+    if(hasActuals){
+      const vals=d.p.filter(p=>p[5]!==null).map(p=>p[5]);
+      const total=vals.reduce((a,b)=>a+b,0);
+      const hits=vals.filter(v=>v>=5).length;
+      const busts=vals.filter(v=>v<0).length;
+      h+=`<div class="bsummary"><strong>${hits}</strong> of ${vals.length} with 5+ career VORP`;
+      if(d.p.length>vals.length)h+=` · <strong>${d.p.length-vals.length}</strong> pending`;
+      h+=`</div>`;
     }
-    h+=`</li>`;
-  });
-  h+="</ul>";
-  if(hasActuals){
-    const vals=d.p.filter(p=>p[5]!==null).map(p=>p[5]);
-    const total=vals.reduce((a,b)=>a+b,0);
-    const hits=vals.filter(v=>v>=5).length;
-    const busts=vals.filter(v=>v<0).length;
-    h+=`<div class="bsummary"><strong>${hits}</strong> of ${vals.length} with 5+ career VORP`;
-    if(d.p.length>vals.length)h+=` · <strong>${d.p.length-vals.length}</strong> pending`;
-    h+=`</div>`;
   }
   b.innerHTML=h;
   area.appendChild(b);
