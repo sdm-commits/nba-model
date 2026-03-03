@@ -233,6 +233,7 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 
   <div class="ensemble-insight">
     <strong>Why it works:</strong> The model drives the strategy — it finds undervalued production players like Sabonis, Siakam, Pritchard, and Herro that scouts overlook. A small scout signal (16%) adds value at the margins by pushing borderline busts out of the top 10 and pulling better athletes up. The result is a +7 VORP edge over the model alone.
+    <details>
     <summary style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--text-sec);cursor:pointer;letter-spacing:0.5px">Methodology ↓</summary>
     <div style="margin-top:16px;font-size:13px;color:var(--text-sec);line-height:1.8">
       <p style="margin-bottom:12px">Scout consensus boards were compiled from Rookie Scale, NBA Mock Draft Database, Hoops Prospects, and cross-referenced contemporary ESPN/SI/NBA.com boards for 2015–2022. International and G League players were filtered out so the comparison is college-only.</p>
@@ -240,6 +241,7 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
       <p>Optimal weight was found by testing every integer percentage from 0–100. The best single weight is 84% model / 16% consensus (553.5 VORP), with a broad plateau from 24–93% model weight where performance stays within 5 VORP of the peak. The model carries the strategy — a small dose of scout signal adds marginal value by catching a few players the model underranks.</p>
     </div>
   </details>
+  </div>
 </section>
 
 <section>
@@ -360,38 +362,39 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 // [name, pos, height, exp, bpm, careerCumVORP_or_null, nSeasons_or_null]
 // 2026 format: [name, pos, height, exp, xValue, consensusAvg, note]
 const D={
-2026:{note:"Way-too-early 2026 mock — 84% model / 16% consensus blend (5 sources) · Mid-season snapshot",is2026:true,p:[
-["Kingston Flemings","G",'6\'4"',"Fr",1.883,1.0,""],
-["Cameron Boozer","F",'6\'9"',"Fr",1.537,2.0,""],
-["AJ Dybantsa","F",'6\'9"',"Fr",1.299,3.0,""],
-["Caleb Wilson","F",'6\'10"',"Fr",1.204,4.0,""],
-["Aday Mara","F",'7\'3"',"Jr",1.053,5.0,""],
-["David Mirkovic","F",'6\'9"',"Fr",1.017,6.0,""],
-["Morez Johnson Jr.","C",'6\'9"',"So",0.962,7.0,""],
-["Flory Bidunga","C",'6\'9"',"So",0.952,8.0,""],
-["Nate Ament","F",'6\'10"',"Fr",0.825,9.0,""],
-["Zvonimir Ivisic","C",'7\'2"',"Jr",0.819,10.0,""],
+2026:{note:"Way-too-early 2026 mock — 84% model / 16% consensus blend (Tankathon, NBA Draft Room, CBS Sports, ESPN, Bleacher Report) · Pre-March Madness snapshot",is2026:true,p:[
+["Kingston Flemings","G",'6\'4"',"Fr",1.883,5.3,""],
+["Darryn Peterson","G",'6\'5"',"Fr",1.476,1.6,"imputed"],
+["Cameron Boozer","F",'6\'9"',"Fr",1.537,2.3,""],
+["AJ Dybantsa","F",'6\'9"',"Fr",1.299,2.0,""],
+["Caleb Wilson","F",'6\'10"',"Fr",1.204,4.3,""],
+["Aday Mara","C",'7\'3"',"Jr",1.053,32.7,"value"],
+["Nate Ament","F",'6\'10"',"Fr",0.825,12.3,""],
+["Morez Johnson Jr.","F",'6\'9"',"So",0.962,25.7,"value"],
 ["Brayden Burries","G",'6\'4"',"Fr",0.784,11.0,""],
-["Patrick Ngongba","F",'6\'11"',"So",0.709,12.0,""],
-["Darius Acuff Jr.","G",'6\'3"',"Fr",0.677,13.0,""],
-["Sam Hoiberg","G",'6\'0"',"Sr",0.609,14.0,""],
-["Zuby Ejiofor","F",'6\'9"',"Sr",0.605,15.0,""],
-["Keaton Wagler","F",'6\'6"',"Fr",0.596,16.0,""],
-["Joseph Tugler","F",'6\'8"',"Jr",0.540,17.0,""],
-["Meleek Thomas","G",'6\'5"',"Fr",0.529,18.0,""],
-["Yaxel Lendeborg","F",'6\'9"',"Sr",0.484,19.0,""],
-["Tounde Yessoufou","G",'6\'5"',"Fr",0.458,20.0,""],
-["Hannes Steinbach","F",'6\'11"',"Fr",0.438,21.0,""],
-["Graham Ike","F",'6\'9"',"Sr",0.409,22.0,""],
-["Labaron Philon","G",'6\'4"',"So",0.400,23.0,""],
-["Maliq Brown","C",'6\'9"',"Sr",0.393,24.0,""],
-["Pryce Sandfort","F",'6\'7"',"Jr",0.386,25.0,""],
-["Chris Cenac Jr.","C",'6\'11"',"Fr",0.385,26.0,""],
-["Milan Momcilovic","F",'6\'8"',"Jr",0.381,27.0,""],
-["Trey McKenney","G",'6\'4"',"Fr",0.373,28.0,""],
-["Koa Peat","F",'6\'8"',"Fr",0.362,29.0,""],
-["Isaiah Evans","F",'6\'6"',"So",0.355,30.0,""]},
-  
+["David Mirkovic","F",'6\'9"',"Fr",1.017,40.0,"value"],
+["Flory Bidunga","C",'6\'9"',"So",0.952,35.3,"value"],
+["Darius Acuff Jr.","G",'6\'3"',"Fr",0.677,11.3,""],
+["Keaton Wagler","F",'6\'6"',"Fr",0.596,7.0,""],
+["Patrick Ngongba","F",'6\'11"',"So",0.709,28.7,"value"],
+["Zvonimir Ivisic","C",'7\'2"',"Jr",0.819,40.0,"value"],
+["Yaxel Lendeborg","F",'6\'9"',"Sr",0.484,12.7,""],
+["Sam Hoiberg","G",'6\'0"',"Sr",0.609,40.0,"value"],
+["Zuby Ejiofor","F",'6\'9"',"Sr",0.605,41.3,"value"],
+["Hannes Steinbach","F",'6\'11"',"Fr",0.438,11.7,""],
+["Meleek Thomas","G",'6\'5"',"Fr",0.529,36.7,"value"],
+["Joseph Tugler","F",'6\'8"',"Jr",0.540,41.7,"value"],
+["Tounde Yessoufou","G",'6\'5"',"Fr",0.458,28.7,"value"],
+["Labaron Philon","G",'6\'4"',"So",0.400,13.7,""],
+["Chris Cenac Jr.","C",'6\'11"',"Fr",0.385,15.7,""],
+["Graham Ike","F",'6\'9"',"Sr",0.409,40.0,"value"],
+["Maliq Brown","C",'6\'9"',"Sr",0.393,40.0,"value"],
+["Koa Peat","F",'6\'8"',"Fr",0.362,17.7,""],
+["Pryce Sandfort","F",'6\'7"',"Jr",0.386,40.0,"value"],
+["Trey McKenney","G",'6\'4"',"Fr",0.373,36.0,"value"],
+["Milan Momcilovic","F",'6\'8"',"Jr",0.381,46.3,"value"],
+["Isaiah Evans","F",'6\'6"',"So",0.355,31.7,"value"]]},
+
 2025:{note:"Rookies",p:[
 ["Cooper Flagg","F",'6\'9"',"Fr",15.0,null,null],
 ["V.J. Edgecombe","G",'6\'5"',"Fr",10.0,null,null],
@@ -522,7 +525,7 @@ const D={
 ["Terry Rozier","G",'6\'1"',"So",8.5,10.1,10],
 ["Willie Cauley-Stein","C",'7\'0"',"Jr",11.3,4.4,7],
 ["Justise Winslow","F",'6\'6"',"Fr",9.0,-0.3,8],
-["Tyus Jones","G",'6\'3"',"Fr",8.4,9.3,11]]},
+["Tyus Jones","G",'6\'3"',"Fr",8.4,9.3,11]]}
 };
 
 // Career cumulative thresholds: green >=5, gray 0-5, red <0
@@ -560,7 +563,7 @@ years.forEach(y=>{
       </li>`;
     });
     h+="</ul>";
-    h+=`<div class="bsummary">Blend: <strong>84% model</strong> + <strong>16% consensus</strong> (CBS, Tankathon, NBA Draft Room, The Game Haus, Bleacher Report) · Players without model data are imputed from consensus rank</div>`;
+    h+=`<div class="bsummary">Blend: <strong>84% model</strong> + <strong>16% consensus</strong> (Tankathon, NBA Draft Room, CBS Sports, ESPN, Bleacher Report) · Players not in mocks assigned penalty rank of 40</div>`;
   } else {
     const hasActuals=d.p.some(p=>p[5]!==null);
     if(hasActuals)h+=`<div class="vorp-header-row"><div></div><div></div><div></div><div class="vorp-header">Career VORP</div></div>`;
