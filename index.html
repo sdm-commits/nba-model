@@ -149,44 +149,43 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 <section>
   <div class="sec-title">The Claim</div>
   <h2 class="sec-heading">More value, fewer mistakes</h2>
-  <p class="sec-sub">Comparing the model's top 10 college players against the actual top 10 draft picks each year from 2015 to 2022. NBA teams select from college, international, and G League pools — the model only sees NCAA stats.</p>
+  <p class="sec-sub">For each draft from 2015 to 2022, the model ranks that year's college first-round picks and keeps its top 10. We compare their career VORP against the actual top 10 picks, which NBA teams chose from college, international, and G League pools. The model only sees NCAA stats.</p>
   <div class="vs-cards">
-    <div class="vs-card ours"><div class="vs-label">The Model · College Only</div><div class="vs-num">550</div><div class="vs-unit">career cumulative VORP from top-10 picks</div></div>
-    <div class="vs-card"><div class="vs-label">Actual Drafts · College, Int'l &amp; G League</div><div class="vs-num">447</div><div class="vs-unit">career cumulative VORP from top-10 picks</div></div>
+    <div class="vs-card ours"><div class="vs-label">The Model · College Only</div><div class="vs-num">631</div><div class="vs-unit">career VORP from top-10 picks</div></div>
+    <div class="vs-card"><div class="vs-label">Actual Drafts · College, Int'l &amp; G League</div><div class="vs-num">483</div><div class="vs-unit">career VORP from top-10 picks</div></div>
   </div>
   <div class="metrics">
-    <div class="metric"><div class="metric-val" style="color:var(--green)">+23%</div><div class="metric-label">More career value per pick<br>over 80 selections</div></div>
-    <div class="metric"><div class="metric-val">18%</div><div class="metric-label">Model bust rate<br>vs 30% for GMs</div></div>
-    <div class="metric"><div class="metric-val" style="color:var(--green)">26</div><div class="metric-label">Productive players found<br>outside the real top 10</div></div>
+    <div class="metric"><div class="metric-val" style="color:var(--green)">+30%</div><div class="metric-label">More career value<br>over 80 selections</div></div>
+    <div class="metric"><div class="metric-val" style="color:var(--green)">7 of 8</div><div class="metric-label">Drafts where the model's<br>top 10 beat the GMs'</div></div>
+    <div class="metric"><div class="metric-val">15%</div><div class="metric-label">Model bust rate<br>vs 31% for GMs</div></div>
   </div>
   <details style="margin-top:20px">
     <summary style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--text-sec);cursor:pointer;letter-spacing:0.5px">Show the math ↓</summary>
     <div style="margin-top:16px;font-size:13px;color:var(--text-sec);line-height:1.8">
-      <p style="margin-bottom:16px">For each draft from 2015 to 2022, the model ranks its top 10 college players. We compare the career cumulative VORP of those 10 players against the actual top 10 picks made by NBA teams. All VORP data from <a href="https://www.basketball-reference.com" style="color:var(--accent);text-decoration:none">Basketball Reference</a>.</p>
+      <p style="margin-bottom:16px">Each draft is predicted by a model trained only on earlier drafts. Career VORP is from <a href="https://www.basketball-reference.com" style="color:var(--accent);text-decoration:none">Basketball Reference</a>, as of November 13, 2026 (2026–27 season in progress). The board averages three training runs with different random seeds, so no single lucky run sets the result; individual runs score 619–635. The original VORP-trained model is shown for comparison.</p>
       <table style="width:100%;border-collapse:collapse;font-family:'DM Mono',monospace;font-size:12px;margin-bottom:16px">
-        <thead>
-          <tr style="border-bottom:2px solid var(--border)">
-            <th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--text)">Year</th>
-            <th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Model Top 10</th>
-            <th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">GM Top 10</th>
-            <th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Δ</th>
-          </tr>
-        </thead>
+        <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--text)">Year</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">GM Top 10</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Original model</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Current model</th></tr></thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2015</td><td style="text-align:right;padding:6px 12px">77.8</td><td style="text-align:right;padding:6px 12px">71.4</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+6.4</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2016</td><td style="text-align:right;padding:6px 12px">102.2</td><td style="text-align:right;padding:6px 12px">76.0</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+26.2</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2017</td><td style="text-align:right;padding:6px 12px">93.9</td><td style="text-align:right;padding:6px 12px">62.4</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+31.5</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2018</td><td style="text-align:right;padding:6px 12px">94.0</td><td style="text-align:right;padding:6px 12px">104.1</td><td style="text-align:right;padding:6px 12px;color:var(--red)">−10.1</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2019</td><td style="text-align:right;padding:6px 12px">51.3</td><td style="text-align:right;padding:6px 12px">33.0</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+18.3</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2020</td><td style="text-align:right;padding:6px 12px">56.3</td><td style="text-align:right;padding:6px 12px">37.2</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+19.1</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2021</td><td style="text-align:right;padding:6px 12px">44.6</td><td style="text-align:right;padding:6px 12px">49.6</td><td style="text-align:right;padding:6px 12px;color:var(--red)">−5.0</td></tr>
-          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2022</td><td style="text-align:right;padding:6px 12px">29.6</td><td style="text-align:right;padding:6px 12px">13.2</td><td style="text-align:right;padding:6px 12px;color:var(--green)">+16.4</td></tr>
-          <tr style="border-top:2px solid var(--border);font-weight:700;color:var(--text)"><td style="padding:8px 12px">Total</td><td style="text-align:right;padding:8px 12px">549.7</td><td style="text-align:right;padding:8px 12px">446.9</td><td style="text-align:right;padding:8px 12px;color:var(--green)">+102.8</td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2015</td><td style="text-align:right;padding:6px 12px">73.0</td><td style="text-align:right;padding:6px 12px">109.3 <span style="color:var(--green)">(+36.3)</span></td><td style="text-align:right;padding:6px 12px">93.9 <span style="color:var(--green)">(+20.9)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2016</td><td style="text-align:right;padding:6px 12px">80.9</td><td style="text-align:right;padding:6px 12px">131.0 <span style="color:var(--green)">(+50.1)</span></td><td style="text-align:right;padding:6px 12px">125.2 <span style="color:var(--green)">(+44.3)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2017</td><td style="text-align:right;padding:6px 12px">65.3</td><td style="text-align:right;padding:6px 12px">55.9 <span style="color:var(--red)">(−9.4)</span></td><td style="text-align:right;padding:6px 12px">100.4 <span style="color:var(--green)">(+35.1)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2018</td><td style="text-align:right;padding:6px 12px">109.3</td><td style="text-align:right;padding:6px 12px">101.2 <span style="color:var(--red)">(−8.1)</span></td><td style="text-align:right;padding:6px 12px">111.2 <span style="color:var(--green)">(+1.9)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2019</td><td style="text-align:right;padding:6px 12px">35.7</td><td style="text-align:right;padding:6px 12px">53.3 <span style="color:var(--green)">(+17.6)</span></td><td style="text-align:right;padding:6px 12px">50.1 <span style="color:var(--green)">(+14.4)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2020</td><td style="text-align:right;padding:6px 12px">43.2</td><td style="text-align:right;padding:6px 12px">73.2 <span style="color:var(--green)">(+30.0)</span></td><td style="text-align:right;padding:6px 12px">61.7 <span style="color:var(--green)">(+18.5)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2021</td><td style="text-align:right;padding:6px 12px">57.6</td><td style="text-align:right;padding:6px 12px">45.9 <span style="color:var(--red)">(−11.7)</span></td><td style="text-align:right;padding:6px 12px">54.0 <span style="color:var(--red)">(−3.6)</span></td></tr>
+          <tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">2022</td><td style="text-align:right;padding:6px 12px">18.4</td><td style="text-align:right;padding:6px 12px">31.4 <span style="color:var(--green)">(+13.0)</span></td><td style="text-align:right;padding:6px 12px">34.2 <span style="color:var(--green)">(+15.8)</span></td></tr>
+          <tr style="border-top:2px solid var(--border);font-weight:700;color:var(--text)"><td style="padding:8px 12px">Total</td><td style="text-align:right;padding:6px 12px">483.4</td><td style="text-align:right;padding:6px 12px">601.2 <span style="color:var(--green)">(+24%)</span></td><td style="text-align:right;padding:6px 12px">630.7 <span style="color:var(--green)">(+30%)</span></td></tr>
         </tbody>
       </table>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">+17% more value:</strong> 524.5 ÷ 446.9 = 1.174. The model's top-10 picks generated 17% more career VORP than the actual top-10 draft picks across 8 drafts.</p>
-      <p style="margin-bottom:10px"><strong style="color:var(--text)">18% bust rate:</strong> A bust is defined as negative career VORP. 14 of 80 model top-10 picks finished with career VORP below zero (18%), compared to 24 of 80 actual top-10 picks (30%).</p>
-      <p><strong style="color:var(--text)">28 players found:</strong> 28 players ranked in the model's top 10 were picked outside the actual top 10 and went on to produce positive career VORP.</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">+30% more value:</strong> 630.7 ÷ 483.4 = 1.305. The model's top-10 picks produced 30% more career VORP than the actual top-10 picks across 8 drafts, and beat them in 7 of the 8.</p>
+      <p style="margin-bottom:10px"><strong style="color:var(--text)">15% bust rate:</strong> a bust is negative career VORP. 12 of the model's 80 picks finished below zero, against 25 of the 80 actual top-10 picks (31%).</p>
+      <p style="margin-bottom:16px"><strong style="color:var(--text)">28 players found:</strong> 28 of the model's top-10 picks were drafted outside the actual top 10 and went on to positive career VORP.</p>
+      <p style="margin-bottom:12px"><strong style="color:var(--text)">Not just box-score value:</strong> VORP is built from box-score stats, the same kind of numbers the model reads. Graded instead on DARKO and xRAPM, impact metrics that also use on/off data, the model still comes out ahead. Each season above replacement level (−2.0) is summed; xRAPM includes 2026–27 so far, weighted by games played out of 82, and DARKO runs through 2025–26 because its 2026–27 numbers aren't published yet:</p>
+      <table style="width:100%;border-collapse:collapse;font-family:'DM Mono',monospace;font-size:12px;margin-bottom:16px">
+        <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:8px 12px;font-weight:600;color:var(--text)">Graded on</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">GM Top 10</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Original model</th><th style="text-align:right;padding:8px 12px;font-weight:600;color:var(--text)">Current model</th></tr></thead>
+        <tbody><tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">DARKO over replacement</td><td style="text-align:right;padding:6px 12px">1105</td><td style="text-align:right;padding:6px 12px">1164 (+5%, won 5/8)</td><td style="text-align:right;padding:6px 12px">1242 (+12%, won 7/8)</td></tr><tr style="border-bottom:1px solid var(--border-light)"><td style="padding:6px 12px">xRAPM over replacement</td><td style="text-align:right;padding:6px 12px">1047</td><td style="text-align:right;padding:6px 12px">1156 (+10%, won 4/8)</td><td style="text-align:right;padding:6px 12px">1215 (+16%, won 6/8)</td></tr></tbody>
+      </table>
+      <p><strong style="color:var(--text)">Caveat:</strong> the optimizer tuned settings on these same eight drafts, so the totals are somewhat optimistic. With its starting settings and no tuning, the current model scores 600 (+24%) and still wins 7 of 8.</p>
     </div>
   </details>
 </section>
@@ -194,35 +193,35 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 <section>
   <div class="sec-title">What happens when you combine them?</div>
   <h2 class="sec-heading">Blending stats with scouts</h2>
-  <p class="sec-sub">The model and scout consensus boards capture different signals. Adding a small dose of consensus — just 16% — squeezes out a bit more value.</p>
+  <p class="sec-sub">Mixing in pre-draft scout consensus barely moves the model. The best blend leans 89% on the model and adds 4.4 career VORP, all from a single swap.</p>
 
   <div class="tri-compare">
-    <div class="tri-card"><div class="tri-tag">Scout Consensus</div><div class="tri-num">483</div><div class="tri-desc">career VORP from top 10</div></div>
-    <div class="tri-card best"><div class="tri-tag">Model + Scouts</div><div class="tri-num">556</div><div class="tri-desc">career VORP from top 10</div></div>
-    <div class="tri-card"><div class="tri-tag">Model Only</div><div class="tri-num">550</div><div class="tri-desc">career VORP from top 10</div></div>
+    <div class="tri-card"><div class="tri-tag">Scout Consensus</div><div class="tri-num">487</div><div class="tri-desc">career VORP from top 10</div></div>
+    <div class="tri-card best"><div class="tri-tag">Model + Scouts</div><div class="tri-num">635</div><div class="tri-desc">career VORP from top 10</div></div>
+    <div class="tri-card"><div class="tri-tag">Model Only</div><div class="tri-num">631</div><div class="tri-desc">career VORP from top 10</div></div>
   </div>
 
   <div style="text-align:center">
-    <div class="weight-pill">Optimal weight: <strong>84% model</strong> · <strong>16% consensus</strong> · plateau from 24–93%</div>
+    <div class="weight-pill">Best weight: <strong>89% model</strong> · <strong>11% consensus</strong> · plateau from 89–100%</div>
   </div>
 
   <div style="margin-top:28px">
     <div class="blend-bar-row" style="border-bottom:2px solid var(--border)">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter)">Year</div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter);text-align:left">Year</div>
       <div></div>
       <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);text-align:right">Blend</div>
       <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter);text-align:right">Model</div>
       <div style="font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-ter);text-align:right">Scouts</div>
     </div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2015</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:69%"></div><div class="blend-bar bar-model" style="width:69%"></div><div class="blend-bar bar-scouts" style="width:67%"></div></div><div class="blend-val best-col">77.8</div><div class="blend-val best-col">77.8</div><div class="blend-val">74.9</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2016</div><div class="blend-bar-wrap"><div class="blend-bar bar-model" style="width:91%"></div><div class="blend-bar bar-blend" style="width:88%"></div><div class="blend-bar bar-scouts" style="width:57%"></div></div><div class="blend-val">98.7</div><div class="blend-val best-col">102.2</div><div class="blend-val">63.9</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2017</div><div class="blend-bar-wrap"><div class="blend-bar bar-scouts" style="width:86%"></div><div class="blend-bar bar-blend" style="width:84%"></div><div class="blend-bar bar-model" style="width:84%"></div></div><div class="blend-val">93.9</div><div class="blend-val">93.9</div><div class="blend-val best-col">96.4</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2018</div><div class="blend-bar-wrap"><div class="blend-bar bar-scouts" style="width:97%"></div><div class="blend-bar bar-blend" style="width:85%"></div><div class="blend-bar bar-model" style="width:84%"></div></div><div class="blend-val">95.3</div><div class="blend-val">94.0</div><div class="blend-val best-col">108.1</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2019</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:46%"></div><div class="blend-bar bar-model" style="width:46%"></div><div class="blend-bar bar-scouts" style="width:29%"></div></div><div class="blend-val best-col">51.3</div><div class="blend-val best-col">51.3</div><div class="blend-val">32.7</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2020</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:54%"></div><div class="blend-bar bar-model" style="width:50%"></div><div class="blend-bar bar-scouts" style="width:43%"></div></div><div class="blend-val best-col">60.4</div><div class="blend-val">56.3</div><div class="blend-val">47.9</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2021</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:44%"></div><div class="blend-bar bar-model" style="width:40%"></div><div class="blend-bar bar-scouts" style="width:34%"></div></div><div class="blend-val best-col">49.4</div><div class="blend-val">44.6</div><div class="blend-val">38.0</div></div>
-    <div class="blend-bar-row"><div class="blend-bar-year">2022</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:26%"></div><div class="blend-bar bar-model" style="width:26%"></div><div class="blend-bar bar-scouts" style="width:18%"></div></div><div class="blend-val best-col">29.6</div><div class="blend-val best-col">29.6</div><div class="blend-val">20.7</div></div>
-    <div class="blend-bar-row" style="border-top:2px solid var(--border);font-weight:700"><div class="blend-bar-year">Total</div><div></div><div class="blend-val best-col" style="color:var(--accent)">556</div><div class="blend-val">550</div><div class="blend-val">483</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2015</div><div class="blend-bar-wrap"><div class="blend-bar bar-scouts" style="width:69%"></div><div class="blend-bar bar-blend" style="width:68%"></div><div class="blend-bar bar-model" style="width:68%"></div></div><div class="blend-val">93.9</div><div class="blend-val">93.9</div><div class="blend-val best-col">94.6</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2016</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:91%"></div><div class="blend-bar bar-model" style="width:91%"></div><div class="blend-bar bar-scouts" style="width:60%"></div></div><div class="blend-val best-col">125.2</div><div class="blend-val best-col">125.2</div><div class="blend-val">82.4</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2017</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:73%"></div><div class="blend-bar bar-model" style="width:73%"></div><div class="blend-bar bar-scouts" style="width:52%"></div></div><div class="blend-val best-col">100.4</div><div class="blend-val best-col">100.4</div><div class="blend-val">71.6</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2018</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:81%"></div><div class="blend-bar bar-model" style="width:81%"></div><div class="blend-bar bar-scouts" style="width:69%"></div></div><div class="blend-val best-col">111.2</div><div class="blend-val best-col">111.2</div><div class="blend-val">94.9</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2019</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:36%"></div><div class="blend-bar bar-model" style="width:36%"></div><div class="blend-bar bar-scouts" style="width:19%"></div></div><div class="blend-val best-col">50.1</div><div class="blend-val best-col">50.1</div><div class="blend-val">26.7</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2020</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:48%"></div><div class="blend-bar bar-model" style="width:45%"></div><div class="blend-bar bar-scouts" style="width:37%"></div></div><div class="blend-val best-col">66.1</div><div class="blend-val">61.7</div><div class="blend-val">51.2</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2021</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:39%"></div><div class="blend-bar bar-model" style="width:39%"></div><div class="blend-bar bar-scouts" style="width:32%"></div></div><div class="blend-val best-col">54.0</div><div class="blend-val best-col">54.0</div><div class="blend-val">44.7</div></div>
+    <div class="blend-bar-row"><div class="blend-bar-year">2022</div><div class="blend-bar-wrap"><div class="blend-bar bar-blend" style="width:25%"></div><div class="blend-bar bar-model" style="width:25%"></div><div class="blend-bar bar-scouts" style="width:15%"></div></div><div class="blend-val best-col">34.2</div><div class="blend-val best-col">34.2</div><div class="blend-val">20.5</div></div>
+    <div class="blend-bar-row" style="border-top:2px solid var(--border);font-weight:700"><div class="blend-bar-year">Total</div><div></div><div class="blend-val best-col" style="color:var(--accent)">635</div><div class="blend-val">631</div><div class="blend-val">487</div></div>
   </div>
 
   <div class="blend-legend">
@@ -232,13 +231,13 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
   </div>
 
   <div class="ensemble-insight">
-    <strong>Why it works:</strong> The model drives the strategy — it finds undervalued production players like Sabonis, Siakam, Pritchard, and Herro that scouts overlook. A small scout signal (16%) adds value at the margins by pushing borderline busts out of the top 10 and pulling better athletes up. The result is a +7 VORP edge over the model alone.
+    <strong>What it shows:</strong> scouts alone (487) do about as well as the actual drafts (483), while the model alone gets 631. Any blend with less than about 80% model weight does worse than the model by itself. The best blend changes one pick in eight drafts (2020: Saddiq Bey, 4.5 career VORP, in place of Udoka Azubuike, 0.1), so the scouts add almost nothing the model doesn't already see.
     <details>
     <summary style="font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--text-sec);cursor:pointer;letter-spacing:0.5px">Methodology ↓</summary>
     <div style="margin-top:16px;font-size:13px;color:var(--text-sec);line-height:1.8">
-      <p style="margin-bottom:12px">Scout consensus boards were compiled from Rookie Scale, NBA Mock Draft Database, Hoops Prospects, and cross-referenced contemporary ESPN/SI/NBA.com boards for 2015–2022. International and G League players were filtered out so the comparison is college-only.</p>
-      <p style="margin-bottom:12px">Blended rank is computed as <span style="font-family:'DM Mono',monospace;font-size:12px">w × model_rank + (1−w) × consensus_rank</span> for each college player. Players missing from one list are assigned a penalty rank of 40. The top 10 by blended rank are selected and their career cumulative VORP is summed.</p>
-      <p>Optimal weight was found by testing every integer percentage from 0–100. The best single weight is 84% model / 16% consensus (553.5 VORP), with a broad plateau from 24–93% model weight where performance stays within 5 VORP of the peak. The model carries the strategy — a small dose of scout signal adds marginal value by catching a few players the model underranks.</p>
+      <p style="margin-bottom:12px">Consensus boards: Rookie Scale consensus (2021–22), Hoops Prospects final boards (2019–20), and averages of three or four final public big boards from SI, CBS Sports, Bleacher Report, ESPN/DraftExpress, Yahoo and the Washington Post (2015–18). International and G League players were removed so the comparison is college-only.</p>
+      <p style="margin-bottom:12px">Blended rank is <span style="font-family:'DM Mono',monospace;font-size:12px">w × model_rank + (1−w) × consensus_rank</span> within each year's college first-round picks; a player missing from the consensus board gets rank 40. The top 10 by blended rank are kept and their career VORP summed.</p>
+      <p>Every weight from 0–100% was tested. The best weight is chosen on these same eight drafts, so the small blend edge is an upper bound.</p>
     </div>
   </details>
   </div>
@@ -247,27 +246,27 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
 <section>
   <div class="sec-title">Where the model wins</div>
   <h2 class="sec-heading">Players the model found early</h2>
-  <p class="sec-sub">Ranked in the model's top 10 but selected outside the lottery by actual NBA teams.</p>
+  <p class="sec-sub">Ranked in the model's top 10 but drafted outside the top 10 by actual NBA teams.</p>
   <div class="steal-grid">
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628983.png" alt="SGA"><div><div class="steal-name">Shai Gilgeous-Alexander</div><div class="steal-sub">'18 · Actual pick 11</div><div class="steal-sub"><em>35.0 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1627734.png" alt="Sabonis"><div><div class="steal-name">Domantas Sabonis</div><div class="steal-sub">'16 · Actual pick 11</div><div class="steal-sub"><em>27.6 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1627783.png" alt="Siakam"><div><div class="steal-name">Pascal Siakam</div><div class="steal-sub">'16 · Actual pick 27</div><div class="steal-sub"><em>21.1 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628389.png" alt="Bam"><div><div class="steal-name">Bam Adebayo</div><div class="steal-sub">'17 · Actual pick 14</div><div class="steal-sub"><em>21.5 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628404.png" alt="Hart"><div><div class="steal-name">Josh Hart</div><div class="steal-sub">'17 · Actual pick 30</div><div class="steal-sub"><em>11.9 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1627749.png" alt="Murray"><div><div class="steal-name">Dejounte Murray</div><div class="steal-sub">'16 · Actual pick 29</div><div class="steal-sub"><em>12.6 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1629639.png" alt="Herro"><div><div class="steal-name">Tyler Herro</div><div class="steal-sub">'19 · Actual pick 13</div><div class="steal-sub"><em>8.6 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1630202.png" alt="Pritchard"><div><div class="steal-name">Payton Pritchard</div><div class="steal-sub">'20 · Actual pick 26</div><div class="steal-sub"><em>7.8 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1626172.png" alt="Looney"><div><div class="steal-name">Kevon Looney</div><div class="steal-sub">'15 · Actual pick 30</div><div class="steal-sub"><em>6.2 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1631105.png" alt="Duren"><div><div class="steal-name">Jalen Duren</div><div class="steal-sub">'22 · Actual pick 13</div><div class="steal-sub"><em>6.2 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1631117.png" alt="Kessler"><div><div class="steal-name">Walker Kessler</div><div class="steal-sub">'22 · Actual pick 22</div><div class="steal-sub"><em>5.1 career VORP</em></div></div></div>
-    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1631106.png" alt="Eason"><div><div class="steal-name">Tari Eason</div><div class="steal-sub">'22 · Actual pick 17</div><div class="steal-sub"><em>3.1 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628983.png" alt="Shai Gilgeous-Alexander"><div><div class="steal-name">Shai Gilgeous-Alexander</div><div class="steal-sub">'18 · Actual pick 11</div><div class="steal-sub"><em>37.7 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628378.png" alt="Donovan Mitchell"><div><div class="steal-name">Donovan Mitchell</div><div class="steal-sub">'17 · Actual pick 13</div><div class="steal-sub"><em>29.7 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1627734.png" alt="Domantas Sabonis"><div><div class="steal-name">Domantas Sabonis</div><div class="steal-sub">'16 · Actual pick 11</div><div class="steal-sub"><em>27.8 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1627783.png" alt="Pascal Siakam"><div><div class="steal-name">Pascal Siakam</div><div class="steal-sub">'16 · Actual pick 27</div><div class="steal-sub"><em>21.4 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1630169.png" alt="Tyrese Haliburton"><div><div class="steal-name">Tyrese Haliburton</div><div class="steal-sub">'20 · Actual pick 12</div><div class="steal-sub"><em>19.2 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1626167.png" alt="Myles Turner"><div><div class="steal-name">Myles Turner</div><div class="steal-sub">'15 · Actual pick 11</div><div class="steal-sub"><em>13.3 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1628404.png" alt="Josh Hart"><div><div class="steal-name">Josh Hart</div><div class="steal-sub">'17 · Actual pick 30</div><div class="steal-sub"><em>12.8 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1626153.png" alt="Delon Wright"><div><div class="steal-name">Delon Wright</div><div class="steal-sub">'15 · Actual pick 20</div><div class="steal-sub"><em>11.1 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1626179.png" alt="Terry Rozier"><div><div class="steal-name">Terry Rozier</div><div class="steal-sub">'15 · Actual pick 16</div><div class="steal-sub"><em>10.1 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1629057.png" alt="Robert Williams"><div><div class="steal-name">Robert Williams III</div><div class="steal-sub">'18 · Actual pick 27</div><div class="steal-sub"><em>9.9 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1629639.png" alt="Tyler Herro"><div><div class="steal-name">Tyler Herro</div><div class="steal-sub">'19 · Actual pick 13</div><div class="steal-sub"><em>9.4 career VORP</em></div></div></div>
+    <div class="steal"><img class="steal-img" src="https://cdn.nba.com/headshots/nba/latest/260x190/1630202.png" alt="Payton Pritchard"><div><div class="steal-name">Payton Pritchard</div><div class="steal-sub">'20 · Actual pick 26</div><div class="steal-sub"><em>8.6 career VORP</em></div></div></div>
   </div>
 </section>
 
 <section>
   <div class="sec-title">Full Results</div>
   <h2 class="sec-heading">Draft boards by year</h2>
-  <p class="sec-sub">The model's top 10 using only pre-draft college stats. VORP (Value Over Replacement Player) measures a player's total contribution compared to a baseline bench-level player — higher means more cumulative impact over their career so far.</p>
+  <p class="sec-sub">The model's top 10 from each year's college first-round picks, using only pre-draft college stats, with the pick NBA teams actually used. VORP (Value Over Replacement Player) measures a player's total contribution compared to a baseline bench-level player — higher means more cumulative impact over their career so far.</p>
   <div class="year-nav" id="nav"></div>
   <div id="boards"></div>
 </section>
@@ -277,8 +276,8 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
   <h2 class="sec-heading">How it works</h2>
   <p class="sec-sub"></p>
   <div class="mgrid">
-    <div class="mblock"><h3>Data & Features</h3><p>Trained on Torvik advanced college stats (2010–2026) supplemented with international Kaggle datasets. 144 engineered features span shooting, creation, defense, trajectory, team context, and positional archetypes inspired by <a href="https://sltsportsanalytics.substack.com/p/decoding-euroleague-positions-a-data" style="color:var(--accent);text-decoration:none">EuroLeague clustering research</a>. Target is 3-year cumulative NBA VORP.</p></div>
-    <div class="mblock"><h3>Validation</h3><p>Walk-forward — for each draft year, the model trains only on prior years. No future data ever enters a prediction. Every configuration is evaluated against real career outcomes across all draft classes (2015–2022).</p></div>
+    <div class="mblock"><h3>Data & Features</h3><p>Trained on Torvik advanced college stats (2010–2026) supplemented with international Kaggle datasets. 150 engineered features span shooting, creation, defense, trajectory, team context, and positional archetypes inspired by <a href="https://sltsportsanalytics.substack.com/p/decoding-euroleague-positions-a-data" style="color:var(--accent);text-decoration:none">EuroLeague clustering research</a>. The model learns to predict career NBA impact: each season's <a href="https://apanalytics.shinyapps.io/DARKO/" style="color:var(--accent);text-decoration:none">DARKO</a> rating above replacement level (−2.0), summed over the career. It is still judged on career VORP. Upperclassmen are discounted (juniors 6%, seniors 18%) because their college production is closer to their ceiling, except seniors who were elite producers (college BPM of 12 or more).</p></div>
+    <div class="mblock"><h3>Validation</h3><p>Walk-forward — for each draft year, the model trains only on prior years. No future data ever enters a prediction. Every configuration is scored on all eight draft classes (2015–2022), averaged over three training runs with different random seeds.</p></div>
     <div class="mblock"><h3>Position System</h3><p>Continuous probabilistic position classification with post-prediction calibration. Point-forward detection prevents tall playmakers from being penalized as traditional bigs.</p></div>
     <div class="mblock"><h3>Known Limitations</h3><p>No access to film, interviews, medicals, or combine data. Can't evaluate character, coachability, or team fit — real edges that GMs have and the model doesn't. Only evaluates college players, meaning it competes against GM boards that also include international and G League prospects.</p></div>
   </div>
@@ -288,48 +287,44 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
       <div class="optimizer-icon"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8c2-6 4-6 5 0s3 6 5 0 3-6 5 0 3 6 5 0"/></svg></div>
       <div>
         <h3>Autonomous Optimizer</h3>
-        <p class="optimizer-tagline">150–200 iterations per model. No human in the loop.</p>
+        <p class="optimizer-tagline">418 iterations. No human in the loop.</p>
       </div>
     </div>
-    <p class="optimizer-body">A custom hill-climbing algorithm runs the full model pipeline in a loop. Each iteration mutates the configuration — feature inclusion across 200+ candidates, feature weights, position calibration thresholds, regularization parameters, scoring cutoffs, position-specific adjustments, senior discount values — then trains an XGBoost model using walk-forward cross-validation and scores it against actual NBA career outcomes.</p>
-    <p class="optimizer-body">Configurations that improve the fitness score survive. Everything else is discarded. Each model converges in 150–200 autonomous iterations, arriving at a feature set and calibration parameters no human selected. Across nine model iterations, correlation improved from ~0.25 to 0.65+.</p>
+    <p class="optimizer-body">A hill-climbing loop runs the full model pipeline over and over. Each iteration mutates one to three settings: switching a feature on or off, or nudging a threshold, position adjustment, or model parameter. It retrains the model draft by draft and scores the result on the same yardstick as above: total career VORP of the model's top 10 across 2015–2022.</p>
+    <p class="optimizer-body">A change survives only if it adds at least 2 career VORP on the three-run average and helps in at least as many drafts as it hurts. Everything else is discarded. Of 418 candidates, 5 survived.</p>
     <div class="optimizer-params">
-      <div class="oparam"><span class="oparam-label">Mutates</span><span class="oparam-val">Feature selection · weights · position thresholds · regularization · scoring tiers · boost/penalty values</span></div>
-      <div class="oparam"><span class="oparam-label">Evaluates</span><span class="oparam-val">Walk-forward CV fitness across all draft years (2015–2022)</span></div>
-      <div class="oparam"><span class="oparam-label">Selection</span><span class="oparam-val">Improvements survive, regressions die — mutation ranges themselves were also tuned</span></div>
+      <div class="oparam"><span class="oparam-label">Mutates</span><span class="oparam-val">Feature on/off switches · thresholds · position adjustments · model parameters</span></div>
+      <div class="oparam"><span class="oparam-label">Evaluates</span><span class="oparam-val">Career VORP of the model's top 10, each draft 2015–2022, trained only on earlier drafts</span></div>
+      <div class="oparam"><span class="oparam-label">Selection</span><span class="oparam-val">+2 VORP minimum, consistent across drafts, averaged over 3 seeds</span></div>
     </div>
   </div>
 
   <div style="margin-top:28px">
     <div style="font-size:13px;color:var(--text-sec);line-height:1.7;margin-bottom:24px;padding:16px 20px;background:var(--bg-subtle);border-radius:10px;border:1px solid var(--border-light)">
       <span style="font-family:'DM Mono',monospace;font-weight:600;color:var(--text);font-size:12px;letter-spacing:0.3px">What is the score?</span><br>
-      A composite fitness metric that measures how well the model's predicted rankings match actual NBA career outcomes across all eight validation drafts (2015–2022). Higher means the model better identifies which college players will produce real NBA value — and avoids ranking busts near the top.
+      Total career VORP of the model's top 10 picks, summed over the eight drafts from 2015 to 2022 and averaged over three training runs. The GMs' actual top 10 picks total 483. The board shown on this page averages the three runs' predictions into one ranking, which scores 631. The chart shows the optimizer's own run, scored with career VORP as of the 2025–26 season, so its numbers are lower than today's totals.
     </div>
-
     <div class="chart-container">
       <div class="chart-header">
         <div>
           <div class="chart-title">Optimizer Convergence</div>
-          <div class="chart-tagline">200 iterations · walk-forward validation · 8 draft classes</div>
+          <div class="chart-tagline">418 iterations · walk-forward validation · 8 draft classes</div>
         </div>
         <div style="text-align:right">
           <div class="chart-best-label">Best Score</div>
-          <div class="chart-best-val" id="bestVal">—</div>
+          <div class="chart-best-val" id="bestVal">589.5</div>
         </div>
       </div>
-
       <svg id="chart" width="100%" viewBox="0 0 740 320" style="overflow:visible;display:block"></svg>
-
       <div class="chart-footer">
         <div class="chart-legend">
-          <div class="legend-item"><div class="legend-line best"></div><span class="legend-label">Best score</span></div>
+          <div class="legend-item"><div class="legend-line best"></div><span class="legend-label">Best kept</span></div>
           <div class="legend-item"><div class="legend-line candidate"></div><span class="legend-label">Candidate</span></div>
-          <div class="legend-item"><div class="legend-line temp"></div><span class="legend-label">Temperature</span></div>
         </div>
         <div class="chart-stats">
-          <div class="chart-stat"><div class="chart-stat-label">Iterations</div><div class="chart-stat-val" id="statIter">0</div></div>
-          <div class="chart-stat"><div class="chart-stat-label">Features</div><div class="chart-stat-val">144/201</div></div>
-          <div class="chart-stat"><div class="chart-stat-label">Temp</div><div class="chart-stat-val" id="statTemp">1.00</div></div>
+          <div class="chart-stat"><div class="chart-stat-label">Iterations</div><div class="chart-stat-val">418</div></div>
+          <div class="chart-stat"><div class="chart-stat-label">Kept</div><div class="chart-stat-val">5</div></div>
+          <div class="chart-stat"><div class="chart-stat-label">Features</div><div class="chart-stat-val">150</div></div>
         </div>
       </div>
     </div>
@@ -338,7 +333,7 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
   <div class="tags">
     <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Pandas</span>
     <span class="tag">Torvik</span><span class="tag">Basketball Reference</span><span class="tag">Walk-Forward CV</span>
-    <span class="tag">144 Features</span><span class="tag">Hill-Climbing Optimizer</span>
+    <span class="tag">150 Features</span><span class="tag">DARKO</span><span class="tag">Hill-Climbing Optimizer</span>
   </div>
 </section>
 
@@ -354,178 +349,145 @@ footer{padding:28px 0;text-align:center;font-size:11px;color:var(--text-ter);bor
     </div>
   </div>
 
-<footer>Data: Torvik, Basketball Reference · Evaluated on first-round picks, 2015–2022 · VORP = Value Over Replacement Player (career cumulative)</footer>
+<footer>Data: Torvik, Basketball Reference, DARKO, xRAPM · Model picks from college first-rounders, 2015–2022 · VORP = Value Over Replacement Player (career cumulative)</footer>
 
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// [name, pos, height, exp, bpm, careerCumVORP_or_null, nSeasons_or_null]
-// 2026 format: [name, pos, height, exp, xValue, consensusAvg, note]
+// [name, pos, height, class, college BPM, career VORP (null = pending), actual pick]
 const D={
-2026:{note:"Way-too-early 2026 mock — 84% model / 16% consensus blend (Tankathon, NBA Draft Room, CBS Sports, ESPN, Bleacher Report) · Pre-March Madness snapshot",is2026:true,p:[
-["Kingston Flemings","G",'6\'4"',"Fr",1.883,5.3,""],
-["Darryn Peterson","G",'6\'5"',"Fr",1.476,1.6,"imputed"],
-["Cameron Boozer","F",'6\'9"',"Fr",1.537,2.3,""],
-["AJ Dybantsa","F",'6\'9"',"Fr",1.299,2.0,""],
-["Caleb Wilson","F",'6\'10"',"Fr",1.204,4.3,""],
-["Aday Mara","C",'7\'3"',"Jr",1.053,32.7,"value"],
-["Nate Ament","F",'6\'10"',"Fr",0.825,12.3,""],
-["Morez Johnson Jr.","F",'6\'9"',"So",0.962,25.7,"value"],
-["Brayden Burries","G",'6\'4"',"Fr",0.784,11.0,""],
-["David Mirkovic","F",'6\'9"',"Fr",1.017,40.0,"value"],
-["Flory Bidunga","C",'6\'9"',"So",0.952,35.3,"value"],
-["Darius Acuff Jr.","G",'6\'3"',"Fr",0.677,11.3,""],
-["Keaton Wagler","F",'6\'6"',"Fr",0.596,7.0,""],
-["Patrick Ngongba","F",'6\'11"',"So",0.709,28.7,"value"],
-["Zvonimir Ivisic","C",'7\'2"',"Jr",0.819,40.0,"value"],
-["Yaxel Lendeborg","F",'6\'9"',"Sr",0.484,12.7,""],
-["Sam Hoiberg","G",'6\'0"',"Sr",0.609,40.0,"value"],
-["Zuby Ejiofor","F",'6\'9"',"Sr",0.605,41.3,"value"],
-["Hannes Steinbach","F",'6\'11"',"Fr",0.438,11.7,""],
-["Meleek Thomas","G",'6\'5"',"Fr",0.529,36.7,"value"],
-["Joseph Tugler","F",'6\'8"',"Jr",0.540,41.7,"value"],
-["Tounde Yessoufou","G",'6\'5"',"Fr",0.458,28.7,"value"],
-["Labaron Philon","G",'6\'4"',"So",0.400,13.7,""],
-["Chris Cenac Jr.","C",'6\'11"',"Fr",0.385,15.7,""],
-["Graham Ike","F",'6\'9"',"Sr",0.409,40.0,"value"],
-["Maliq Brown","C",'6\'9"',"Sr",0.393,40.0,"value"],
-["Koa Peat","F",'6\'8"',"Fr",0.362,17.7,""],
-["Pryce Sandfort","F",'6\'7"',"Jr",0.386,40.0,"value"],
-["Trey McKenney","G",'6\'4"',"Fr",0.373,36.0,"value"],
-["Milan Momcilovic","F",'6\'8"',"Jr",0.381,46.3,"value"],
-["Isaiah Evans","F",'6\'6"',"So",0.355,31.7,"value"]]},
-
-2025:{note:"1-year players",p:[
-["Cooper Flagg","F",'6\'9"',"Fr",15.0,2.0,null],
-["V.J. Edgecombe","G",'6\'5"',"Fr",10.0,1.0,null],
-["Dylan Harper","G",'6\'6"',"Fr",8.6,null,null],
-["Kon Knueppel","F",'6\'7"',"Fr",9.5,3.1,null],
-["Nique Clifford","F",'6\'6"',"Sr",10.3,-1.4,null],
-["Derik Queen","F",'6\'10"',"Fr",7.9,0.6,null],
-["Tre Johnson","G",'6\'6"',"Fr",6.6,-1.1,null],
-["Jase Richardson","G",'6\'3"',"Fr",10.0,-0.1,null],
-["Collin Murray-Boyles","F",'6\'8"',"So",11.1,1.0,null],
-["Khaman Maluach","C",'7\'2"',"Fr",8.7,-0.2,null]]},
-
-2024:{p:[
-["Reed Sheppard","G",'6\'3"',"Fr",10.9,2.6,null],
-["Isaiah Collier","G",'6\'5"',"Fr",3.5,-1.7,null],
-["Baylor Scheierman","F",'6\'7"',"Sr",8.7,1.0,null],
-["Devin Carter","G",'6\'3"',"Jr",11.4,-0.2,null],
-["Jared McCain","G",'6\'3"',"Fr",7.6,0.2,null],
-["Zach Edey","C",'7\'4"',"Sr",15.5,0.9,null],
-["Kel'el Ware","C",'7\'0"',"So",8.1,2.4,null],
-["Stephon Castle","G",'6\'6"',"Fr",5.5,1.4,null],
-["Donovan Clingan","C",'7\'2"',"So",14.1,3.2,null],
-["Ja'Kobe Walter","G",'6\'4"',"Fr",4.4,0.4,null]]},
-
-2023:{p:[
-["Brandon Miller","F",'6\'9"',"Fr",11.0,0.8,3],
-["Brandin Podziemski","G",'6\'5"',"So",10.0,3.4,3],
-["Dereck Lively II","C",'7\'1"',"Fr",9.0,2.0,3],
-["Keyonte George","G",'6\'4"',"Fr",4.7,-0.3,3],
-["Brice Sensabaugh","F",'6\'6"',"Fr",7.6,-0.5,3],
-["Jarace Walker","F",'6\'8"',"Fr",7.7,0.3,3],
-["Jordan Hawkins","G",'6\'5"',"So",7.4,-2.2,3],
-["Marcus Sasser","G",'6\'2"',"Sr",11.0,0.1,3],
-["Cason Wallace","G",'6\'4"',"Fr",7.0,4.0,3],
-["Anthony Black","G",'6\'7"',"Fr",5.9,0.5,3]]},
-
+2026:{note:"Model's top 10 among the 2026 college first-rounders · rookie seasons in progress",p:[
+["Brayden Burries","G","6'4\"","Fr",10.4,null,10],
+["Aday Mara","C","7'3\"","Jr",14.7,null,12],
+["Kingston Flemings","G","6'4\"","Fr",10.0,null,8],
+["Yaxel Lendeborg","F","6'9\"","Sr",15.9,null,11],
+["Cameron Boozer","F","6'9\"","Fr",17.3,null,3],
+["Hannes Steinbach","C","6'11\"","Fr",8.7,null,14],
+["AJ Dybantsa","F","6'9\"","Fr",6.6,null,1],
+["Caleb Wilson","C","6'10\"","Fr",12.3,null,4],
+["Darryn Peterson","G","6'5\"","Fr",8.0,null,2],
+["Darius Acuff Jr.","G","6'3\"","Fr",6.9,null,7]]},
+2025:{note:"One NBA season so far",p:[
+["Dylan Harper","G","6'6\"","Fr",8.6,1.8,2],
+["V.J. Edgecombe","G","6'5\"","Fr",10.0,1.2,3],
+["Cooper Flagg","F","6'9\"","Fr",15.0,2.9,1],
+["Tre Johnson","G","6'6\"","Fr",6.6,-1.5,6],
+["Asa Newell","C","6'11\"","Fr",8.6,0.0,23],
+["Jase Richardson","G","6'3\"","Fr",10.0,-0.2,25],
+["Derik Queen","C","6'10\"","Fr",7.9,0.7,13],
+["Collin Murray-Boyles","F","6'8\"","So",11.1,0.9,9],
+["Kon Knueppel","G","6'7\"","Fr",9.5,3.0,4],
+["Ace Bailey","F","6'10\"","Fr",3.8,-1.2,5]]},
+2024:{note:"Two NBA seasons so far",p:[
+["Reed Sheppard","G","6'3\"","Fr",10.9,2.7,3],
+["Donovan Clingan","C","7'2\"","So",14.1,3.7,7],
+["Isaiah Collier","G","6'5\"","Fr",3.5,-1.8,29],
+["Jared McCain","G","6'3\"","Fr",7.6,0.2,16],
+["Devin Carter","G","6'3\"","Jr",11.4,-0.2,13],
+["Zach Edey","C","7'4\"","Sr",15.5,0.9,9],
+["Baylor Scheierman","F","6'7\"","Sr",8.7,1.1,30],
+["Kel'el Ware","C","7'0\"","So",8.1,2.2,15],
+["Terrence Shannon Jr.","G","6'6\"","Sr",10.6,-0.1,27],
+["Rob Dillingham","G","6'3\"","Fr",5.6,-1.6,8]]},
+2023:{note:"Three NBA seasons so far",p:[
+["Dereck Lively II","C","7'1\"","Fr",9.0,2.0,12],
+["Brandon Miller","F","6'9\"","Fr",11.0,1.9,2],
+["Brandin Podziemski","G","6'5\"","So",10.0,3.9,19],
+["Anthony Black","G","6'7\"","Fr",5.9,0.9,6],
+["Jordan Hawkins","G","6'5\"","So",7.4,-2.3,14],
+["Brice Sensabaugh","F","6'6\"","Fr",7.6,-0.4,28],
+["Cason Wallace","G","6'4\"","Fr",7.0,4.1,10],
+["Gradey Dick","F","6'8\"","Fr",6.5,-2.0,13],
+["Jarace Walker","F","6'8\"","Fr",7.7,0.1,8],
+["Cam Whitmore","G","6'7\"","Fr",5.3,0.8,20]]},
 2022:{p:[
-["Chet Holmgren","C",'7\'0"',"Fr",14.1,7.4,3],
-["Paolo Banchero","F",'6\'10"',"Fr",7.1,7.1,4],
-["Walker Kessler","C",'7\'1"',"So",13.2,5.1,4],
-["Jabari Smith Jr.","F",'6\'10"',"Fr",10.1,1.4,4],
-["Jalen Duren","C",'6\'11"',"Fr",6.6,7.5,4],
-["Keegan Murray","F",'6\'8"',"So",15.0,1.6,4],
-["Tari Eason","F",'6\'8"',"So",13.5,2.8,4],
-["Mark Williams","C",'7\'0"',"So",12.1,3.8,4],
-["Blake Wesley","G",'6\'5"',"Fr",0.7,-2.2,4],
-["Johnny Davis","G",'6\'5"',"So",7.7,-1.3,3]]},
-
+["Chet Holmgren","C","7'0\"","Fr",14.1,7.5,2],
+["Paolo Banchero","F","6'10\"","Fr",7.1,7.2,1],
+["Walker Kessler","C","7'1\"","So",13.2,5.5,22],
+["Jalen Duren","C","6'11\"","Fr",6.6,7.6,13],
+["Jabari Smith","F","6'10\"","Fr",10.1,2.1,3],
+["Tari Eason","F","6'8\"","So",13.5,2.8,17],
+["Mark Williams","C","7'0\"","So",12.1,3.8,15],
+["Bennedict Mathurin","G","6'6\"","So",6.7,-2.5,6],
+["Keegan Murray","F","6'8\"","So",15.0,1.5,4],
+["Ochai Agbaji","G","6'5\"","Sr",8.1,-1.3,14]]},
 2021:{p:[
-["Evan Mobley","C",'7\'0"',"Fr",12.6,12.1,5],
-["Cade Cunningham","G",'6\'8"',"Fr",7.4,9.8,5],
-["Jalen Suggs","G",'6\'4"',"Fr",8.5,3.1,5],
-["Scottie Barnes","F",'6\'9"',"Fr",7.2,13.1,5],
-["Cameron Thomas","G",'6\'4"',"Fr",5.3,-0.4,5],
-["Quentin Grimes","G",'6\'5"',"Jr",10.0,2.7,5],
-["Corey Kispert","F",'6\'7"',"Sr",10.4,-0.6,5],
-["Day'Ron Sharpe","C",'6\'11"',"Fr",6.4,2.0,5],
-["Trey Murphy III","F",'6\'9"',"Jr",7.2,8.3,5],
-["Chris Duarte","G",'6\'6"',"Sr",10.4,-0.8,4]]},
-
+["Evan Mobley","C","7'0\"","Fr",12.6,12.7,3],
+["Cade Cunningham","F","6'8\"","Fr",7.4,10.5,1],
+["Scottie Barnes","F","6'9\"","Fr",7.2,13.2,4],
+["Jalen Suggs","G","6'4\"","Fr",8.5,3.0,5],
+["Chris Duarte","G","6'6\"","Sr",10.4,-0.8,13],
+["Jalen Johnson","C","6'9\"","Fr",7.7,7.5,20],
+["Franz Wagner","F","6'9\"","So",10.6,7.9,8],
+["James Bouknight","G","6'5\"","So",7.9,-0.9,11],
+["Isaiah Jackson","C","6'10\"","Fr",7.4,1.4,22],
+["Corey Kispert","G","6'7\"","Sr",10.4,-0.5,15]]},
 2020:{p:[
-["Anthony Edwards","G",'6\'5"',"Fr",4.9,15.8,6],
-["Payton Pritchard","G",'6\'2"',"Sr",10.0,8.5,6],
-["Isaiah Stewart","C",'6\'9"',"Fr",6.6,1.2,6],
-["Cole Anthony","G",'6\'3"',"Fr",4.3,2.5,6],
-["Jalen Smith","F",'6\'10"',"So",10.8,2.4,6],
-["Onyeka Okongwu","C",'6\'9"',"Fr",10.9,6.0,6],
-["Zeke Nnaji","F",'6\'11"',"Fr",6.8,-0.7,6],
-["Obi Toppin","F",'6\'9"',"So",11.9,5.4,6],
-["Tyrese Haliburton","G",'6\'5"',"So",10.7,18.9,5],
-["Malachi Flynn","G",'6\'1"',"Jr",10.9,-0.5,5]]},
-
+["Anthony Edwards","G","6'5\"","Fr",4.9,16.1,1],
+["Isaiah Stewart","C","6'9\"","Fr",6.6,1.3,16],
+["Onyeka Okongwu","C","6'9\"","Fr",10.9,6.3,6],
+["Tyrese Haliburton","G","6'5\"","So",10.7,19.2,12],
+["Jalen Smith","C","6'10\"","So",10.8,2.6,10],
+["Cole Anthony","G","6'3\"","Fr",4.3,2.5,15],
+["Payton Pritchard","G","6'2\"","Sr",10.0,8.6,26],
+["Aaron Nesmith","G","6'6\"","So",8.9,-0.5,14],
+["Obi Toppin","F","6'9\"","So",11.9,5.5,8],
+["Udoka Azubuike","C","7'0\"","Sr",11.0,0.1,27]]},
 2019:{p:[
-["Ja Morant","G",'6\'3"',"So",10.0,11.8,7],
-["Zion Williamson","F",'6\'7"',"Fr",18.0,14.1,6],
-["R.J. Barrett","F",'6\'7"',"Fr",7.2,1.8,7],
-["Nickeil Alexander-Walker","G",'6\'5"',"So",7.9,3.7,7],
-["Brandon Clarke","F",'6\'8"',"Jr",15.4,7.1,7],
-["Jarrett Culver","G",'6\'5"',"So",10.5,-1.6,4],
-["Grant Williams","F",'6\'7"',"Jr",11.8,1.0,7],
-["Matisse Thybulle","G",'6\'5"',"Sr",10.5,6.1,7],
-["Tyler Herro","G",'6\'5"',"Fr",8.1,9.0,7],
-["Ty Jerome","G",'6\'5"',"Jr",10.3,3.3,7]]},
-
+["R.J. Barrett","G","6'7\"","Fr",7.2,2.0,3],
+["Jarrett Culver","G","6'5\"","So",10.5,-1.6,6],
+["Zion Williamson","F","6'7\"","Fr",18.7,14.5,1],
+["Tyler Herro","G","6'5\"","Fr",8.1,9.4,13],
+["Ja Morant","G","6'3\"","So",10.0,11.9,2],
+["Chuma Okeke","F","6'8\"","So",10.2,1.0,16],
+["Nickeil Alexander-Walker","G","6'5\"","So",7.9,3.9,17],
+["Brandon Clarke","C","6'8\"","Jr",15.4,7.1,21],
+["PJ Washington","C","6'8\"","So",10.0,2.7,12],
+["Romeo Langford","G","6'6\"","Fr",5.0,-0.8,14]]},
 2018:{p:[
-["Trae Young","G",'6\'2"',"Fr",10.1,19.7,8],
-["Mohamed Bamba","F",'6\'11"',"Fr",9.8,3.0,8],
-["Deandre Ayton","C",'7\'1"',"Fr",9.9,9.2,8],
-["Mikal Bridges","F",'6\'7"',"Jr",12.0,15.8,8],
-["Marvin Bagley III","F",'6\'11"',"Fr",9.6,1.5,8],
-["Collin Sexton","G",'6\'3"',"Fr",6.0,3.0,8],
-["Moritz Wagner","C",'6\'11"',"Jr",8.3,3.4,8],
-["Shai Gilgeous-Alexander","G",'6\'6"',"Fr",8.1,36.9,8],
-["Grayson Allen","G",'6\'5"',"Sr",7.3,6.6,8],
-["Chandler Hutchison","F",'6\'7"',"Sr",8.2,-0.9,4]]},
-
+["Wendell Carter Jr.","C","6'10\"","Fr",10.4,5.4,7],
+["Mohamed Bamba","C","6'11\"","Fr",9.8,0.0,6],
+["Jaren Jackson Jr.","C","6'11\"","Fr",10.6,9.2,4],
+["Deandre Ayton","C","7'1\"","Fr",9.9,9.2,1],
+["Shai Gilgeous-Alexander","G","6'6\"","Fr",8.1,37.7,11],
+["Mikal Bridges","G","6'7\"","Jr",12.0,15.7,10],
+["Trae Young","G","6'2\"","Fr",10.1,19.7,5],
+["Marvin Bagley III","C","6'11\"","Fr",9.6,1.5,2],
+["Collin Sexton","G","6'3\"","Fr",6.0,2.9,8],
+["Robert Williams","C","6'10\"","So",9.6,9.9,27]]},
 2017:{p:[
-["Jayson Tatum","F",'6\'8"',"Fr",6.7,30.3,8],
-["Markelle Fultz","G",'6\'4"',"Fr",8.8,1.1,8],
-["Josh Hart","G",'6\'5"',"Sr",10.8,12.6,9],
-["Lonzo Ball","G",'6\'6"',"Fr",11.0,6.9,7],
-["Zach Collins","C",'7\'0"',"Fr",10.0,1.0,8],
-["Caleb Swanigan","F",'6\'9"',"So",8.4,-0.7,3],
-["Bam Adebayo","C",'6\'10"',"Fr",6.8,22.2,9],
-["Josh Jackson","F",'6\'8"',"Fr",8.5,-3.1,5],
-["Lauri Markkanen","F",'7\'0"',"Fr",8.6,12.2,9],
-["De'Aaron Fox","G",'6\'3"',"Fr",7.1,15.1,9]]},
-
+["Lonzo Ball","G","6'6\"","Fr",11.0,6.9,2],
+["Malik Monk","G","6'3\"","Fr",7.9,3.0,11],
+["Donovan Mitchell","G","6'3\"","So",10.1,29.7,13],
+["Markelle Fultz","G","6'4\"","Fr",8.8,1.1,1],
+["Jayson Tatum","F","6'8\"","Fr",6.7,30.9,3],
+["Caleb Swanigan","C","6'9\"","So",8.4,-0.7,26],
+["Josh Jackson","F","6'8\"","Fr",8.5,-3.1,4],
+["Josh Hart","G","6'5\"","Sr",10.8,12.8,30],
+["Jonathan Isaac","F","6'10\"","Fr",9.1,4.3,6],
+["De'Aaron Fox","G","6'3\"","Fr",7.1,15.5,5]]},
 2016:{p:[
-["Domantas Sabonis","F",'6\'11"',"So",7.6,27.6,10],
-["Jamal Murray","G",'6\'4"',"Fr",8.9,16.5,9],
-["Brandon Ingram","F",'6\'9"',"Fr",6.7,10.3,10],
-["Buddy Hield","G",'6\'4"',"Sr",11.8,11.7,10],
-["Brice Johnson","F",'6\'10"',"Sr",11.8,0.0,2],
-["Kris Dunn","G",'6\'4"',"Jr",9.6,2.8,10],
-["Pascal Siakam","F",'6\'9"',"So",8.3,21.0,10],
-["DeAndre' Bembry","F",'6\'6"',"Jr",7.9,-0.4,6],
-["Malik Beasley","G",'6\'5"',"Fr",5.3,3.7,9],
-["Jakob Poeltl","C",'7\'0"',"So",9.7,11.9,10]]},
-
+["Ben Simmons","F","6'10\"","Fr",9.8,14.9,1],
+["Brice Johnson","C","6'10\"","Sr",11.8,0.0,25],
+["Jakob Poeltl","C","7'0\"","So",9.7,11.9,9],
+["Brandon Ingram","F","6'9\"","Fr",6.7,10.3,2],
+["Jamal Murray","G","6'4\"","Fr",8.9,17.2,7],
+["Buddy Hield","G","6'4\"","Sr",11.8,11.6,6],
+["Kris Dunn","G","6'4\"","Jr",9.6,3.1,5],
+["Domantas Sabonis","C","6'11\"","So",7.6,27.8,11],
+["Pascal Siakam","C","6'9\"","So",8.3,21.4,27],
+["Caris LeVert","G","6'7\"","Sr",10.4,7.0,20]]},
 2015:{p:[
-["Karl-Anthony Towns","C",'6\'11"',"Fr",13.1,38.5,11],
-["Jahlil Okafor","C",'6\'11"',"Fr",9.5,0.0,7],
-["Cameron Payne","G",'6\'2"',"So",10.3,3.2,10],
-["Stanley Johnson","F",'6\'6"',"Fr",8.4,-1.6,8],
-["Frank Kaminsky","C",'7\'0"',"Sr",15.4,3.7,8],
-["D'Angelo Russell","G",'6\'5"',"Fr",10.9,12.4,11],
-["Terry Rozier","G",'6\'1"',"So",8.5,10.1,10],
-["Willie Cauley-Stein","C",'7\'0"',"Jr",11.3,4.4,7],
-["Justise Winslow","F",'6\'6"',"Fr",9.0,-0.3,8],
-["Tyus Jones","G",'6\'3"',"Fr",8.4,9.2,11]]}
+["Karl-Anthony Towns","C","6'11\"","Fr",13.1,39.0,1],
+["Jahlil Okafor","C","6'11\"","Fr",9.5,0.0,3],
+["Myles Turner","C","6'11\"","Fr",8.5,13.3,11],
+["Stanley Johnson","F","6'6\"","Fr",8.4,-1.5,8],
+["D'Angelo Russell","G","6'5\"","Fr",10.9,12.3,2],
+["Terry Rozier","G","6'1\"","So",8.5,10.1,16],
+["Frank Kaminsky","C","7'0\"","Sr",15.4,3.7,9],
+["Justise Winslow","G","6'6\"","Fr",9.0,-0.3,10],
+["Kevon Looney","C","6'9\"","Fr",6.3,6.2,30],
+["Delon Wright","G","6'5\"","Sr",14.7,11.1,20]]}
 };
 
 // Career cumulative thresholds: green >=5, gray 0-5, red <0
@@ -549,22 +511,7 @@ years.forEach(y=>{
   let h="";
   if(d.note)h+=`<div class="board-note">${d.note}</div>`;
   
-  if(d.is2026){
-    h+=`<div class="mock-header-row"><div></div><div></div><div class="mock-header">Pos</div><div class="mock-header">Cons.</div></div>`;
-    h+='<ul class="plist">';
-    d.p.slice(0,10).forEach((p,i)=>{
-      const rk=i+1;
-      const badge=p[6]==='value'?'<span class="value-badge">VALUE</span>':'';
-      h+=`<li class="prow prow-2026">
-        <div class="prk${rk<=3?" top":""}">${rk}</div>
-        <div><div class="pname">${p[0]}${badge}</div><div class="pdet">${p[2]} · ${p[3]} · Consensus avg #${Math.round(p[5])}</div></div>
-        <span class="pos pos-${p[1]}">${posLabel[p[1]]}</span>
-        <div class="consensus-rk">#${Math.round(p[5])}</div>
-      </li>`;
-    });
-    h+="</ul>";
-    h+=`<div class="bsummary">Blend: <strong>84% model</strong> + <strong>16% consensus</strong> (Tankathon, NBA Draft Room, CBS Sports, ESPN, Bleacher Report) · Players not in mocks assigned penalty rank of 40</div>`;
-  } else {
+
     const hasActuals=d.p.some(p=>p[5]!==null);
     if(hasActuals)h+=`<div class="vorp-header-row"><div></div><div></div><div></div><div class="vorp-header">Career VORP</div></div>`;
     h+='<ul class="plist">';
@@ -572,7 +519,7 @@ years.forEach(y=>{
       const rk=i+1;
       h+=`<li class="prow">
         <div class="prk${rk<=3?" top":""}">${rk}</div>
-        <div><div class="pname">${p[0]}</div><div class="pdet">${p[2]} · ${p[3]} · ${p[4]} BPM</div></div>
+        <div><div class="pname">${p[0]}</div><div class="pdet">${p[2]} · ${p[3]} · ${p[4]} BPM · Pick #${p[6]}</div></div>
         <span class="pos pos-${p[1]}">${posLabel[p[1]]}</span>`;
       if(p[5]!==null){
         const v=p[5];
@@ -592,154 +539,30 @@ years.forEach(y=>{
       if(d.p.length>vals.length)h+=` · <strong>${d.p.length-vals.length}</strong> pending`;
       h+=`</div>`;
     }
-  }
+
   b.innerHTML=h;
   area.appendChild(b);
 });
 </script>
 
 <script>
-// SA Optimizer Chart
+// Optimizer convergence: real log (career VORP per candidate, 3-seed average)
 (function(){
-  const chartEl=document.getElementById('chart');
-  if(!chartEl) return;
-
-  let seed = 42;
-  function rand(){ seed=(seed*16807)%2147483647; return seed/2147483647; }
-
-  const data = [];
-  let best=0.42, current=0.42;
-  for(let i=0;i<=200;i++){
-    const temp=Math.max(0.3,1.0*Math.pow(0.990,i));
-    const spread=0.15*temp+0.03;
-    current=best-spread*rand()*rand()-0.01+rand()*0.02;
-    const base=0.42+0.22*(1-Math.exp(-i/50));
-    const targetBest=Math.min(0.6473,base+(rand()-0.5)*0.01);
-    const improveChance = i<80 ? 0.12 : i<140 ? 0.08 : 0.03;
-    if(targetBest>best && rand()<improveChance) current=targetBest;
-    current=Math.max(0.20,current);
-    if(current>best) best=current;
-    best=Math.min(0.6473,best);
-    data.push({i,current:+current.toFixed(4),best:+best.toFixed(4),temp:+temp.toFixed(3)});
-  }
-
-  const W=740,H=320,P={t:20,r:20,b:36,l:46};
-  const pw=W-P.l-P.r, ph=H-P.t-P.b;
-  const xMin=0,xMax=200,yMin=0.25,yMax=0.78;
-  const x=v=>P.l+((v-xMin)/(xMax-xMin))*pw;
-  const y=v=>P.t+ph-((v-yMin)/(yMax-yMin))*ph;
-
-  const svg=chartEl;
-  const ns='http://www.w3.org/2000/svg';
-  function el(tag,attrs){const e=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);return e;}
-
-  const defs=el('defs',{});
-  const lg1=el('linearGradient',{id:'bg',x1:'0',y1:'0',x2:'1',y2:'0'});
-  lg1.append(el('stop',{offset:'0%','stop-color':'#34c759','stop-opacity':'0.5'}),el('stop',{offset:'100%','stop-color':'#34c759','stop-opacity':'1'}));
-  const lg2=el('linearGradient',{id:'bf',x1:'0',y1:'0',x2:'0',y2:'1'});
-  lg2.append(el('stop',{offset:'0%','stop-color':'#34c759','stop-opacity':'0.08'}),el('stop',{offset:'100%','stop-color':'#34c759','stop-opacity':'0'}));
-  defs.append(lg1,lg2); svg.append(defs);
-
-  [0.3,0.4,0.5,0.6,0.7].forEach(t=>{
+  const svg=document.getElementById('chart'); if(!svg) return;
+  const C=[561.3, 544.0, 560.2, 557.5, 549.8, 558.6, 561.3, 561.3, 554.5, 546.5, 573.8, 566.9, 552.2, 572.6, 575.0, 571.4, 536.5, 575.6, 573.8, 562.3, 573.8, 562.4, 570.6, 551.1, 573.8, 573.8, 573.8, 573.8, 573.8, 573.5, 565.7, 559.5, 573.8, 562.9, 555.2, 577.7, 570.5, 568.7, 573.1, 565.1, 580.0, 563.0, 574.8, 577.7, 559.4, 565.0, 577.7, 577.7, 577.7, 562.9, 570.8, 524.9, 583.5, 563.1, 553.9, 583.5, 583.5, 571.0, 568.3, 563.0, 523.0, 574.2, 582.7, 573.4, 564.3, 583.5, 560.3, 583.5, 585.2, 573.8, 561.0, 563.0, 583.5, 572.7, 579.9, 573.3, 574.9, 567.8, 587.4, 571.5, 579.0, 586.6, 543.4, 560.7, 587.4, 586.3, 587.4, 587.4, 580.3, 568.2, 580.4, 587.4, 564.1, 548.6, 587.4, 587.4, 587.4, 560.7, 587.4, 564.4, 580.4, 587.4, 573.5, 570.2, 584.7, 587.4, 577.4, 556.0, 562.6, 589.5, 589.5, 585.2, 578.6, 549.0, 557.0, 566.6, 578.6, 544.7, 536.9, 589.5, 565.1, 565.3, 589.5, 565.2, 553.4, 581.1, 567.7, 589.5, 587.4, 589.5, 569.9, 589.5, 572.7, 575.6, 583.8, 566.2, 571.3, 584.0, 577.8, 580.0, 561.3, 587.1, 589.5, 555.9, 562.7, 569.5, 585.9, 556.5, 579.5, 551.3, 570.3, 589.5, 579.9, 589.5, 543.0, 578.2, 572.7, 574.2, 573.5, 559.2, 572.2, 564.5, 589.5, 579.2, 588.8, 584.7, 574.9, 583.8, 545.9, 569.5, 561.1, 589.5, 589.5, 559.5, 568.7, 548.2, 558.6, 589.5, 589.5, 560.4, 564.9, 587.6, 570.7, 559.5, 554.3, 584.3, 589.5, 558.6, 558.7, 550.1, 549.4, 584.6, 567.8, 589.5, 575.1, 569.1, 576.9, 567.9, 563.6, 573.4, 588.7, 563.4, 576.8, 580.5, 589.5, 564.0, 589.5, 591.1, 573.4, 554.5, 523.5, 584.7, 557.7, 589.5, 569.3, 589.5, 576.3, 557.6, 552.9, 589.5, 586.2, 571.7, 576.7, 587.1, 589.5, 576.0, 564.0, 589.5, 575.5, 589.3, 563.4, 568.8, 589.5, 557.2, 575.5, 589.5, 572.0, 589.5, 585.3, 589.5, 576.2, 574.6, 576.2, 563.2, 580.5, 573.8, 537.1, 567.0, 589.5, 583.4, 589.5, 555.7, 540.4, 577.8, 547.2, 580.7, 574.0, 589.5, 589.5, 579.9, 568.1, 589.5, 570.6, 568.4, 569.8, 555.5, 567.8, 589.5, 541.9, 589.5, 576.0, 558.4, 585.9, 589.5, 560.5, 562.0, 589.5, 582.0, 563.7, 589.5, 585.6, 549.1, 563.6, 589.5, 551.7, 571.4, 591.0, 573.6, 589.5, 568.6, 576.3, 583.2, 589.5, 583.9, 554.8, 554.6, 589.5, 589.5, 589.9, 574.4, 578.8, 576.1, 589.5, 568.1, 575.2, 556.3, 589.5, 576.1, 569.3, 589.5, 560.1, 579.7, 589.5, 536.2, 589.5, 589.5, 589.5, 530.1, 553.3, 579.7, 567.7, 566.5, 584.7, 576.3, 555.4, 589.5, 589.5, 577.0, 558.1, 578.2, 560.4, 553.1, 573.0, 576.2, 579.3, 559.0, 573.5, 589.5, 576.3, 551.7, 589.5, 566.6, 572.7, 571.8, 567.2, 589.5, 563.5, 589.5, 582.3, 584.4, 543.1, 575.0, 558.9, 559.3, 566.1, 579.5, 562.3, 568.3, 569.7, 571.6, 576.4, 549.5, 551.0, 589.5, 589.5, 578.2, 576.3, 568.5, 575.0, 589.5, 567.2, 577.2, 589.5, 589.5, 590.2, 571.5, 564.0, 559.9, 560.7, 589.5, 574.0, 573.9, 584.5, 553.0, 583.0, 565.4, 552.0, 557.6, 573.6, 589.5, 585.0, 576.3, 589.5, 589.5, 571.8, 577.7, 571.9, 570.8, 589.5, 589.5, 564.5, 586.5, 589.5, 569.5, 581.1, 576.1, 570.5, 572.0, 565.6, 589.5, 589.6, 569.9, 589.5, 565.2, 513.5, 558.4, 560.1, 556.6, 551.3], B=[561.3, 561.3, 561.3, 561.3, 561.3, 561.3, 561.3, 561.3, 561.3, 561.3, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 573.8, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 577.7, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 583.5, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 587.4, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5, 589.5];
+  const W=740,H=320,P={t:20,r:20,b:36,l:46},pw=W-P.l-P.r,ph=H-P.t-P.b,yMin=505.0,yMax=600.0,n=C.length-1;
+  const x=i=>P.l+(i/n)*pw, y=v=>P.t+ph-((v-yMin)/(yMax-yMin))*ph, ns='http://www.w3.org/2000/svg';
+  const el=(t,a)=>{const e=document.createElementNS(ns,t);for(const[k,v]of Object.entries(a))e.setAttribute(k,v);return e;};
+  for(let t=Math.ceil(yMin/20)*20;t<=yMax;t+=20){
     svg.append(el('line',{x1:P.l,y1:y(t),x2:W-P.r,y2:y(t),stroke:'#e5e5e7','stroke-width':'1'}));
-    const txt=el('text',{x:P.l-8,y:y(t)+4,'text-anchor':'end',fill:'#aeaeb2','font-size':'10','font-family':"'DM Mono',monospace"});
-    txt.textContent=t.toFixed(1); svg.append(txt);
-  });
-  [0,50,100,150,200].forEach(t=>{
-    const txt=el('text',{x:x(t),y:H-P.b+18,'text-anchor':'middle',fill:'#aeaeb2','font-size':'10','font-family':"'DM Mono',monospace"});
-    txt.textContent=t; svg.append(txt);
-  });
-  const xLabel=el('text',{x:W/2,y:H-2,'text-anchor':'middle',fill:'#aeaeb2','font-size':'11','font-family':"'DM Mono',monospace",'letter-spacing':'1'});
-  xLabel.textContent='Iteration'; svg.append(xLabel);
-  svg.append(el('rect',{x:P.l,y:P.t,width:pw,height:ph,fill:'none',stroke:'#e5e5e7','stroke-width':'1',rx:'2'}));
-
-  const tempPath=el('path',{fill:'none',stroke:'#b07ce8','stroke-width':'1.5','stroke-dasharray':'4,5',opacity:'0.55',d:''});
-  const fillPath=el('path',{fill:'url(#bf)',d:''});
-  const candidatePath=el('path',{fill:'none',stroke:'#0071e3','stroke-width':'1.2','stroke-linecap':'round',opacity:'0.35',d:''});
-  const bestPath=el('path',{fill:'none',stroke:'url(#bg)','stroke-width':'2.5','stroke-linecap':'round',d:''});
-  svg.append(tempPath,fillPath,candidatePath,bestPath);
-
-  const dotsG=el('g',{});
-  svg.append(dotsG);
-  const curDot=el('circle',{r:'4.5',fill:'#34c759',opacity:'0'});
-  svg.append(curDot);
-
-  const featureTags=['rim_pressure','adj_ortg','usage_rate','three_pt_volume','steal_rate','bpm_slope','league_strength','assist_ratio','rim_runner','freshman_alpha','block_rate','ft_rate','guard_stocks','wing_length','team_barthag','ts_pct','rebound_rate','turnover_rate','mid_range_vol','sleeper_flag'];
-
-  let frame=0;
-  const bestValEl=document.getElementById('bestVal');
-  const statIterEl=document.getElementById('statIter');
-  const statTempEl=document.getElementById('statTemp');
-
-  // Use IntersectionObserver to only start animation when chart is visible
-  let started=false;
-  const observer=new IntersectionObserver((entries)=>{
-    if(entries[0].isIntersecting && !started){
-      started=true;
-      setTimeout(()=>requestAnimationFrame(step),300);
-    }
-  },{threshold:0.3});
-  observer.observe(chartEl);
-
-  function step(){
-    frame+=1;
-    if(frame>data.length) frame=data.length;
-    const vis=data.slice(0,frame);
-    if(!vis.length) return;
-
-    let cp='',bp='',tp='',fp='';
-    vis.forEach((d,i)=>{
-      const cmd=i===0?'M':'L';
-      cp+=`${cmd}${x(d.i)},${y(d.current)} `;
-      bp+=`${cmd}${x(d.i)},${y(d.best)} `;
-      tp+=`${cmd}${x(d.i)},${P.t+ph-d.temp*ph} `;
-    });
-    const last=vis[vis.length-1];
-    fp=bp+`L${x(last.i)},${y(yMin)} L${x(0)},${y(yMin)} Z`;
-
-    candidatePath.setAttribute('d',cp);
-    bestPath.setAttribute('d',bp);
-    tempPath.setAttribute('d',tp);
-    fillPath.setAttribute('d',fp);
-
-    curDot.setAttribute('cx',x(last.i));
-    curDot.setAttribute('cy',y(last.best));
-    curDot.setAttribute('opacity','1');
-
-    dotsG.innerHTML='';
-    const milestones=[];
-    vis.forEach((d,i)=>{
-      if(i>0&&d.best>data[i-1].best+0.003){
-        let tooClose=false;
-        for(let j=Math.max(0,i-12);j<i;j++){
-          if(j>0&&data[j].best>data[j-1].best+0.003){tooClose=true;break;}
-        }
-        if(!tooClose) milestones.push({d,i});
-      }
-    });
-
-    milestones.forEach((m,mi)=>{
-      const d=m.d;
-      dotsG.append(el('circle',{cx:x(d.i),cy:y(d.best),r:'6.5',fill:'none',stroke:'#34c759','stroke-width':'1',opacity:'0.25'}));
-      dotsG.append(el('circle',{cx:x(d.i),cy:y(d.best),r:'3',fill:'#34c759',opacity:'0.8'}));
-      const age=frame-d.i;
-      if(age<40){
-        const opacity=Math.max(0,1-age/40);
-        const tagText=featureTags[mi%featureTags.length];
-        const yOff=mi%2===0?-16:14;
-        const bg=el('rect',{x:x(d.i)-2,y:y(d.best)+yOff-9,width:tagText.length*6.2+10,height:16,rx:'4',ry:'4',fill:'#fff',stroke:'#e5e5e7','stroke-width':'0.5',opacity:opacity*0.95});
-        const txt=el('text',{x:x(d.i)+3,y:y(d.best)+yOff+2,'font-family':"'DM Mono',monospace",'font-size':'9','font-weight':'500','letter-spacing':'0.3',fill:'#6e6e73',opacity:opacity});
-        txt.textContent=tagText;
-        dotsG.append(bg,txt);
-      }
-    });
-
-    bestValEl.textContent=last.best.toFixed(4);
-    statIterEl.textContent=frame;
-    statTempEl.textContent=last.temp.toFixed(2);
-
-    if(frame<data.length) setTimeout(step,25);
+    const tx=el('text',{x:P.l-8,y:y(t)+4,'text-anchor':'end',fill:'#aeaeb2','font-size':'10','font-family':"'DM Mono',monospace"});tx.textContent=t;svg.append(tx);
   }
+  for(let t=0;t<=n;t+=100){const tx=el('text',{x:x(t),y:H-P.b+18,'text-anchor':'middle',fill:'#aeaeb2','font-size':'10','font-family':"'DM Mono',monospace"});tx.textContent=t;svg.append(tx);}
+  const xl=el('text',{x:W/2,y:H-2,'text-anchor':'middle',fill:'#aeaeb2','font-size':'11','font-family':"'DM Mono',monospace"});xl.textContent='Iteration';svg.append(xl);
+  svg.append(el('rect',{x:P.l,y:P.t,width:pw,height:ph,fill:'none',stroke:'#e5e5e7','stroke-width':'1',rx:'2'}));
+  C.forEach((v,i)=>svg.append(el('circle',{cx:x(i),cy:y(v),r:'2',fill:'#0071e3',opacity:'0.3'})));
+  let d='M'+x(0)+','+y(B[0]);for(let i=1;i<=n;i++)d+='H'+x(i)+'V'+y(B[i]);
+  svg.append(el('path',{d,fill:'none',stroke:'#34c759','stroke-width':'2.5','stroke-linejoin':'round'}));
 })();
 </script>
 </body>
